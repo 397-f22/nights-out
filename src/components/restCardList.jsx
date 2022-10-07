@@ -1,13 +1,11 @@
 import RestCard from "./restCard";
-function RestCardList(props){
-    const { data } = props;
-    let restCardList = Object.entries(data).map(([id, data]) => {
-        <RestCard title={id} numVisited={data.numVisited} datesVisited={data.datesVisited} />        
-    })    
-    
+function RestCardList({data}) {
+    console.log(data)
     return(
-        <div>
-            {restCardList}
+        <div>   
+            {Object.entries(data).map(([id, data]) => 
+                <RestCard title={id} numVisited={data.numVisited} datesVisited={data.datesVisited} />        
+            )}
         </div>
     )
 }

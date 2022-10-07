@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 function RestCard(props) {
     return(
-        <div className="resturant_card">
+        <div className="restaurant_card">
             <h3>{props.title}</h3>
             <div>
                 <p>{props.numVisited}</p>

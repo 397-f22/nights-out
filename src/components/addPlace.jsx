@@ -2,7 +2,7 @@ import "./addPlace.css";
 
 const AddPlace = () => {
   return (
-    <div className="modal" id="addModal" tabindex="-1" role="dialog">
+    <div className="modal" id="addModal" tabIndex="-1" role="dialog">
       <div className="modal-dialog" role="document">
         <div className="modal-content">
           <div className="modal-header">
