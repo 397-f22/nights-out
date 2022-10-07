@@ -2,25 +2,25 @@ import "./addPlace.css";
 
 const AddPlace = () => {
   return (
-    <div class="modal" id="addModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Tried Somewhere New?</h5>
+    <div className="modal" id="addModal" tabindex="-1" role="dialog">
+      <div className="modal-dialog" role="document">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title">Tried Somewhere New?</h5>
             <button
               type="button"
-              class="close"
+              className="close"
               data-dismiss="modal"
               aria-label="Close"
             >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <div class="form-group">
-                <input type="text" class="form-control" id="placeName" placeholder="The place's name"/>
+          <div className="modal-body">
+            <div className="form-group">
+                <input type="text" className="form-control" id="placeName" placeholder="The place's name"/>
             </div>
-            <button type="submit" class="btn btn-outline-danger">Save</button>
+            <button type="submit" className="btn btn-outline-danger">Save</button>
           </div>
         </div>
       </div>
