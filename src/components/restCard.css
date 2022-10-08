@@ -1,0 +1,15 @@
+.restaurant_card{
+  background-color: blueviolet;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+}
+
+/* remove this after we have the component for the counter */
+.restaurant_card p{
+  margin: 0px;
+}
