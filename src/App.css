@@ -1,0 +1,9 @@
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menu-button {
+    margin: 0 5px;
+}

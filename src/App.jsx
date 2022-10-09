@@ -3,6 +3,7 @@ import "./App.css";
 import RestCardList from "./components/restCardList";
 import { useDbData } from "./utilities/firebase";
 import AddPlace from "./components/addPlace";
+import Header from "./components/Header";
 
 const data = {
 	"Tommate": {
@@ -34,7 +35,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1>NightsOut</h1>
+      <Header />
       <RestCardList data={data} />
 
       <button type="button" className="btn btn-outline-danger" data-toggle="modal" data-target="#addModal">
