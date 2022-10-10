@@ -44,7 +44,7 @@ const App = () => {
 			<Header />
 			<RestCardList data={data} />
 
-			<button type="button" className="btn btn-outline-danger" onClick={openModal}>
+			<button type="button" id="addButton" className="btn btn-outline-danger" onClick={openModal}>
 				Add a new place
 			</button>
 			<AddPlace open={open} close={closeModal}>

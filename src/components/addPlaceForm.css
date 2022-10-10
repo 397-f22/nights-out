@@ -13,3 +13,7 @@ form {
 button {
     width: fit-content;
 }
+
+label {
+    color: white;
+}

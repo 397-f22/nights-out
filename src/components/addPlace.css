@@ -15,6 +15,7 @@
 }
 
 .modal-show .modal-content {
+    background-color: #25153a;
     opacity: 1;
     transition: 0.2s linear;
 }

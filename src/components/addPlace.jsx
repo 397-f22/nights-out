@@ -10,7 +10,7 @@ const AddPlace = ({ children, open, close }) => (
     <div className="modal-dialog" role="document">
       <div className="modal-content">
         <div className="modal-header">
-          <button type="button" className="btn-close" aria-label="Close"
+          <button type="button" className="btn-close btn-close-white" aria-label="Close"
             onClick={close}
           />
         </div>

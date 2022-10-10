@@ -3,7 +3,27 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 20px;
+
+    color:#c395ee;
 }
 .menu-button {
     margin: 0 5px;
+}
+
+#addButton {
+    display: flex;
+    margin: auto;
+    margin-top: 30px;   
+}
+
+.btn-outline-danger {
+    color: #c395ee !important;
+    border: 2px solid #c395ee !important;
+}
+
+.btn-outline-danger:active, .btn-outline-danger:hover{
+    background-color: #c395ee !important;
+    color: white !important;
+    border: 2px solid #c395ee !important;
 }
