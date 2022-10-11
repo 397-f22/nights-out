@@ -1,31 +1,25 @@
 import "./addPlace.css";
 
-const AddPlace = () => {
-  return (
-    <div class="modal" id="addModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Tried Somewhere New?</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-                <input type="text" class="form-control" id="placeName" placeholder="The place's name"/>
-            </div>
-            <button type="submit" class="btn btn-outline-danger">Save</button>
-          </div>
+const AddPlace = ({ children, open, close }) => (
+  <div
+    className={`modal ${open ? 'modal-show' : ''}`}
+    tabIndex="-1"
+    role="dialog"
+    onClick={(evt) => { if (evt.target === evt.currentTarget) close(); }}
+  >
+    <div className="modal-dialog" role="document">
+      <div className="modal-content">
+        <div className="modal-header">
+          <button type="button" className="btn-close btn-close-white" aria-label="Close"
+            onClick={close}
+          />
+        </div>
+        <div className="modal-body">
+          {children}
         </div>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default AddPlace;

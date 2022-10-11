@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+button {
+    width: fit-content;
+}
+
+label {
+    color: white;
+}

@@ -1,13 +1,12 @@
 import {useState} from 'react';
+import Counter from "./counter"
+import "./restCard.css";
 
 function RestCard(props) {
     return(
-        <div className="resturant_card">
-            <h3>{props.title}</h3>
-            <div>
-                <p>{props.numVisited}</p>
-                {/* <button onClick={()=> addVisit()} title="+"/> */}
-            </div>
+        <div className="restaurant_card">
+            <p>{props.title}</p>
+            <Counter/>
         </div>
     )
 }
