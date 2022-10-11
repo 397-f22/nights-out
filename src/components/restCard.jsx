@@ -6,7 +6,7 @@ function RestCard(props) {
     return(
         <div className="restaurant_card">
             <p>{props.title}</p>
-            <Counter/>
+            <Counter num_visited={props.numVisited}/>
         </div>
     )
 }

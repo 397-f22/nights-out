@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-export default function Counter(){
-    const [count, setCount] = useState(1);
+export default function Counter({ num_visited }){
+    const [count, setCount] = useState(num_visited);
 
     return(
         <div>
