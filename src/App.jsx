@@ -9,7 +9,7 @@ import AddPlaceForm from "./components/addPlaceForm";
 const initData = {
 	"Tommate": {
 		"numVisited": 4,
-		"datesVisited": ["06/11/22", "06/12/22", "06/13/22", "06/14/22"]
+		"datesVisited": ["06/11/22", "06/12/22", "06/13/22", "09/15/22"]
 	},
 	"Joy Yee's": {
 		"numVisited": 3,
@@ -21,7 +21,7 @@ const initData = {
 	},
 	"Tapville": {
 		"numVisited": 1,
-		"datesVisited": ["07/11/22"]
+		"datesVisited": ["07/15/22"]
 	}
 }
 

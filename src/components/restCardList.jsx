@@ -2,6 +2,7 @@ import { useState } from 'react';
 import RestCard from "./restCard";
 import AddPlace from "./addPlace";
 import FilterForm from './FilterForm';
+import filterByDateRange from '../utilities/helper';
 
 function RestCardList({data}) {
     const [range, setRange] = useState("All");
@@ -9,6 +10,8 @@ function RestCardList({data}) {
 	const openModal = () => setOpen(true);
 	const closeModal = () => setOpen(false);
 
+    let filteredData = filterByDateRange(data, range)    
+    
     return(
         <div>
             <button type="button" id="addButton" className="btn btn-outline-danger" onClick={openModal}>
@@ -17,7 +20,7 @@ function RestCardList({data}) {
             <AddPlace open={open} close={closeModal}>
 				<FilterForm range={range} setRange={setRange} />
 			</AddPlace>
-            {Object.entries(data).map(([id, data]) => 
+            {Object.entries(filteredData).map(([id, data]) => 
                 <RestCard title={id} numVisited={data.numVisited} datesVisited={data.datesVisited} />        
             )}
         </div>
