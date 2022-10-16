@@ -1,4 +1,4 @@
-const Header = (openSideModal) =>{
+const Header = ({openSideModal}) =>{
 
     return(
         <header className="header">
