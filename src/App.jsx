@@ -4,6 +4,7 @@ import RestCardList from "./components/restCardList";
 import { useDbData } from "./utilities/firebase";
 import AddPlace from "./components/addPlace";
 import Header from "./components/Header";
+import SidePanel from "./components/sidePanel";
 import AddPlaceForm from "./components/addPlaceForm";
 
 const initData = {
@@ -35,6 +36,9 @@ const App = () => {
 	const[data, setData] = useState(initData);
 	// const[data, error] = useDbData('/');
 	const [open, setOpen] = useState(false);
+	const [openSidePanel, setOpenSidePanel] = useState(false);
+	const openSideModal = () => setOpenSidePanel(true);
+	const closeSideModal = () => setOpenSidePanel(false);
 
 	const openModal = () => setOpen(true);
 	const closeModal = () => setOpen(false);
@@ -42,7 +46,8 @@ const App = () => {
 
 	return (
 		<div className="container">
-			<Header />
+			<Header openSideModal={openSideModal} />
+			<SidePanel open={openSidePanel} close={closeSideModal} />
 			<RestCardList data={data} />
 
 			<button type="button" id="addButton" className="btn" onClick={openModal}>
