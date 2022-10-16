@@ -1,11 +1,15 @@
+import "./counter.css";
 import React, { useState } from 'react';
+
 export default function Counter({ num_visited }){
     const [count, setCount] = useState(num_visited);
 
     return(
-        <div>
+        <div className="counter">
+            <button className="countUp btn" onClick={()=> setCount(count + 1)} title="+"> 
+              ▲
+            </button>
             <p>{count}</p>
-            <button onClick={()=> setCount(count + 1)} title="+" className='p-1'/> 
         </div>
     )
 

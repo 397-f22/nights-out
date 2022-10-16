@@ -11,10 +11,30 @@
     margin: 0 5px;
 }
 
+p {
+  margin: 0;
+}
+
 #addButton {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    --radius: 2rem;
+    height: calc(2 * var(--radius));
+    width: calc(2 * var(--radius));
+    border-radius: var(--radius);
+    background-color: #8a2be2;
+    border: solid 1px #8a2be2;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.7rem;
     display: flex;
-    margin: auto;
-    margin-top: 30px;   
+}
+
+#addButton p{
+  position: relative;
+  top: -0.2rem;
 }
 
 .btn-outline-danger {

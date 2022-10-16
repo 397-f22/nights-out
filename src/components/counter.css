@@ -1,0 +1,13 @@
+.counter>* {
+  display: inline-block;
+}
+
+.countUp {
+  position: relative;
+  top: -0.1rem;
+  color: #fff;
+  background: none;
+  border: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}

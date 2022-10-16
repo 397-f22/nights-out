@@ -14,7 +14,7 @@ function RestCardList({data}) {
     
     return(
         <div>
-            <button type="button" id="addButton" className="btn btn-outline-danger" onClick={openModal}>
+            <button type="button" id="filterButton" className="btn btn-outline-danger" onClick={openModal}>
                 Filter
             </button>
             <AddPlace open={open} close={closeModal}>
