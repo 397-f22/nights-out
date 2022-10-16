@@ -33,6 +33,7 @@ const App = () => {
 	// if (!data) return <h1>No data found</h1>;
 
 	const[data, setData] = useState(initData);
+	// const[data, error] = useDbData('/');
 	const [open, setOpen] = useState(false);
 
 	const openModal = () => setOpen(true);

@@ -3,14 +3,14 @@ import { useCallback, useEffect, useState } from 'react';
 import { getDatabase, onValue, ref, update } from 'firebase/database';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD2uKgi19T9EyFasJDQSLRUg6zHA8Ca5W8",
-    authDomain: "nights-out-2a7ad.firebaseapp.com",
-    projectId: "nights-out-2a7ad",
-    storageBucket: "nights-out-2a7ad.appspot.com",
-    messagingSenderId: "848035551241",
-    appId: "1:848035551241:web:5f5796ae96ed06d9b640d8",
-    measurementId: "G-173YQRC1KK"
-  };
+  apiKey: "AIzaSyANKmob-HRJfUD93isPnMiP0qYlmr5vvOc",
+  authDomain: "nights--out.firebaseapp.com",
+  databaseUrl: "https://nights--out-default-rtdb.firebaseio.com",
+  projectId: "nights--out",
+  storageBucket: "nights--out.appspot.com",
+  messagingSenderId: "141763324201",
+  appId: "1:141763324201:web:ead90549427d71ff8aef38"
+};
 
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
