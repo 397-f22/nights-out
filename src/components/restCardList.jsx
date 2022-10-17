@@ -10,21 +10,22 @@ function RestCardList({data}) {
 	const openModal = () => setOpen(true);
 	const closeModal = () => setOpen(false);
 
-    let filteredData = filterByDateRange(data, range)    
-    
-    return(
-        <div>
-            <button type="button" id="filterButton" className="btn btn-outline-danger" onClick={openModal}>
-                Filter
-            </button>
-            <AddPlace open={open} close={closeModal}>
-				<FilterForm range={range} setRange={setRange} />
-			</AddPlace>
-            {Object.entries(filteredData).map(([id, data]) => 
-                <RestCard title={id} numVisited={data.numVisited} datesVisited={data.datesVisited} />        
-            )}
-        </div>
-    )
+    if(data){    
+        let filteredData = filterByDateRange(data, range)            
+        return(
+            <div>
+                <button type="button" id="filterButton" className="btn btn-outline-danger" onClick={openModal}>
+                    Filter
+                </button>
+                <AddPlace open={open} close={closeModal}>
+                    <FilterForm range={range} setRange={setRange} />
+                </AddPlace>
+                {Object.entries(filteredData).map(([id, data]) => 
+                    <RestCard title={id} numVisited={data.numVisited} datesVisited={data.datesVisited} />        
+                )}
+            </div>
+        )
+    }
 }
 
 export default RestCardList;
