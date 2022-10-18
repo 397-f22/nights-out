@@ -1,7 +1,7 @@
 form {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 0px;
 }
 
 .form-group {
@@ -16,4 +16,9 @@ button {
 
 label {
     color: white;
+}
+
+#error-message {
+    color: white;
+    padding: 20px 0px 10px 0px !important;
 }
