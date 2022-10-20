@@ -2,11 +2,11 @@ import {useState} from 'react';
 import Counter from "./counter"
 import "./restCard.css";
 
-function RestCard(props) {
+function RestCard({title, filteredData, setFilteredData}) {
     return(
         <div className="restaurant_card">
-            <p>{props.title}</p>
-            <Counter name={props.title} num_visited={props.numVisited} dates_visited={props.datesVisited}/>
+            <p>{title}</p>
+            <Counter name={title} filteredData={filteredData} setFilteredData={setFilteredData}/>
         </div>
     )
 }

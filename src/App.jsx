@@ -9,7 +9,7 @@ import AddPlaceForm from "./components/addPlaceForm";
 
 const App = () => {	
 	const[data, error] = useDbData('/');
-	console.log(data)  
+	//console.log(data)  
 	const [open, setOpen] = useState(false);
 	const [message, setMessage] = useState("");
 	// const [openSidePanel, setOpenSidePanel] = useState(false);
@@ -19,6 +19,9 @@ const App = () => {
 	const openModal = () => { setOpen(true); setMessage("");};
 	const closeModal = () => setOpen(false);
 
+	if (!data){
+		return (<div>Loading</div>);
+	}
 
 	return (
 		<div className="container">

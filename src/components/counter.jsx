@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import { useDbUpdate } from '../utilities/firebase'
 
 
-export default function Counter({ name, num_visited, dates_visited }){
-    const [count, setCount] = useState(num_visited);
+export default function Counter({ name, filteredData, setFilteredData}){
     const [update, result] = useDbUpdate(`/${name}`);
 
     var today = new Date();
@@ -16,8 +15,16 @@ export default function Counter({ name, num_visited, dates_visited }){
     
     const submit = (evt) => {
         evt.preventDefault();
-        update({numVisited: count + 1, datesVisited: [...dates_visited, today]});
-        setCount(count + 1);
+        //console.log({numVisited: filteredData[name].numVisited + 1, datesVisited: [...filteredData[name].datesVisited, today]});
+        update({numVisited: filteredData[name].numVisited + 1, datesVisited: [...filteredData[name].datesVisited, today]});
+        setFilteredData({
+            ...filteredData,
+            [name]: {
+                ...filteredData[name],
+                filteredNum: filteredData[name].filteredNum + 1,
+                numVisited: filteredData[name].numVisited + 1
+            }
+        })
     };
 
     return(
@@ -25,7 +32,7 @@ export default function Counter({ name, num_visited, dates_visited }){
             <button className="countUp btn" onClick={submit} title="+"> 
               ▲
             </button>
-            <p>{count}</p>
+            <p>{filteredData[name].filteredNum}</p>
         </div>
     )
 
