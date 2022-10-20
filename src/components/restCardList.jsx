@@ -9,6 +9,7 @@ function RestCardList({ data }) {
     const [range, setRange] = useState("All");
     const [open, setOpen] = useState(false);
     const [filteredData, setFiltered] = useState(filterByDateRange(data, range));
+    console.log(filteredData)
     //const [filteredData, setFiltered] = useState(data);
     const openModal = () => setOpen(true);
     const closeModal = () => setOpen(false);
@@ -19,11 +20,10 @@ function RestCardList({ data }) {
         setFiltered(filterByDateRange(data, e.target.value));
     };
 
-
-    //console.log(data);
-    //console.log(filteredData);
-
     if (filteredData) {
+        let sortedData = Object.entries(filteredData);
+        sortedData.sort(customSort);
+        console.log(sortedData);
         return (
             <div>
                 <button type="button" id="filterButton" className="btn btn-outline-danger" onClick={openModal}>
@@ -32,7 +32,8 @@ function RestCardList({ data }) {
                 <AddPlace open={open} close={closeModal}>
                     <FilterForm updateFilter={updateFilter} />
                 </AddPlace>
-                {Object.entries(filteredData).map(([id, data]) => {
+                {
+                sortedData.map(([id, data]) => {
                     //let filteredVisits = getNumInDateRange(data.datesVisited, range);
                     return <RestCard title={id} filteredData={filteredData} setFilteredData={setFiltered}/>
                 }
@@ -40,6 +41,13 @@ function RestCardList({ data }) {
             </div>
         )
     }
+}
+
+function customSort(a, b) {
+    if (a[1].filteredNum < b[1].filteredNum) {
+        return -1
+    }
+    return 1
 }
 
 export default RestCardList;

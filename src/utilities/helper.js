@@ -23,13 +23,13 @@ export function filterByDateRange(data, range){
         filteredObj[x[0]]['filteredNum'] = getNumInDateRange(x[1].datesVisited, beforeDay);
     });    
 
-    console.log(filteredObj);
+    //console.log(filteredObj);
 
     return filteredObj;    
 }
 
 export function getNumInDateRange(dates, beforeDay){
-    console.log(dates);
+    //console.log(dates);
     return dates.filter( value => {
         let lastDay = new Date(value);
         return lastDay >= beforeDay;  
