@@ -15,6 +15,7 @@ export default function Counter({ name, filteredData, setFilteredData}){
     
     const submit = (evt) => {
         evt.preventDefault();
+        console.log(filteredData)
         //console.log({numVisited: filteredData[name].numVisited + 1, datesVisited: [...filteredData[name].datesVisited, today]});
         update({numVisited: filteredData[name].numVisited + 1, datesVisited: [...filteredData[name].datesVisited, today]});
         setFilteredData({

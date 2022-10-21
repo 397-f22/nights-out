@@ -9,21 +9,21 @@ function RestCardList({ data }) {
     const [range, setRange] = useState("All");
     const [open, setOpen] = useState(false);
     const [filteredData, setFiltered] = useState(filterByDateRange(data, range));
-    console.log(filteredData)
+    //console.log(filteredData)
     //const [filteredData, setFiltered] = useState(data);
     const openModal = () => setOpen(true);
     const closeModal = () => setOpen(false);
 
     const updateFilter = (e) => {
         setRange(e.target.value);
-        console.log(range);
+        //console.log(range);
         setFiltered(filterByDateRange(data, e.target.value));
     };
 
     if (filteredData) {
         let sortedData = Object.entries(filteredData);
         sortedData.sort(customSort);
-        console.log(sortedData);
+        //console.log(sortedData);
         return (
             <div>
                 <div id="filterWrapper">
