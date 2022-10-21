@@ -35,7 +35,7 @@ function MainPage(){
     return(
         <>
             {/* <SidePanel open={openSidePanel} close={closeSideModal} /> */}
-            <RestCardList data={userData} />
+            <RestCardList data={userData} user={user}/>
 
             <button type="button" id="addButton" className="btn" onClick={openModal}>
                 <p>+</p>

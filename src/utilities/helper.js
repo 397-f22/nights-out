@@ -16,7 +16,7 @@ export function filterByDateRange(data, range){
         return lastDay >= beforeDay;                        
     });    
 
-    console.log(filteredArr);
+    //console.log(filteredArr);
     
     let filteredObj = {}
     filteredArr.map(x => {

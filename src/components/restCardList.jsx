@@ -5,7 +5,7 @@ import FilterForm from './FilterForm';
 import { filterByDateRange, getNumInDateRange } from '../utilities/helper';
 import { set } from 'firebase/database';
 
-function RestCardList({ data }) {
+function RestCardList({ data, user }) {
     const [range, setRange] = useState("All");
     const [open, setOpen] = useState(false);
     const [filteredData, setFiltered] = useState(filterByDateRange(data, range));
@@ -38,7 +38,7 @@ function RestCardList({ data }) {
                 {
                     sortedData.map(([id, data], index) => {
                         //let filteredVisits = getNumInDateRange(data.datesVisited, range);
-                        return <RestCard title={id} filteredData={filteredData} setFilteredData={setFiltered} first={index == 0} />
+                        return <RestCard user={user} title={id} filteredData={filteredData} setFilteredData={setFiltered} first={index == 0} />
                     }
                     )}
             </div>

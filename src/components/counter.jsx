@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { useDbUpdate } from '../utilities/firebase'
 
 
-export default function Counter({ name, filteredData, setFilteredData}){
-    const [update, result] = useDbUpdate(`/${name}`);
+export default function Counter({ user, name, filteredData, setFilteredData}){
+    const [update, result] = useDbUpdate(`/${user}/${name}`);
 
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
