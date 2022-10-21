@@ -60,3 +60,11 @@ p {
     right: 15px;
     top: 15px;
 }
+
+.login {
+    color: white;
+}
+
+.login > .form-group {
+    text-align: center;
+}
