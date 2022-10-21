@@ -47,3 +47,7 @@ p {
     color: white !important;
     border: 2px solid #c395ee !important;
 }
+.login {
+    color: white;
+    text-align: center;
+}
