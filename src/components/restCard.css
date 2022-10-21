@@ -13,3 +13,20 @@
 .restaurant_card p{
   margin: 0px;
 }
+
+#recommendation{
+  background-color: rgb(221, 64, 116);
+}
+
+.titleInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+#rec{
+  font-weight: 200;
+}
+#Title{
+  font-weight: 600;
+}

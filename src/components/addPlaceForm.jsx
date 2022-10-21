@@ -42,6 +42,7 @@ const AddPlaceForm = ({data, message, setMessage}) => {
             location.reload();
         }
     };
+    
     return (
         <form>
             <div className="form-group">

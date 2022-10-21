@@ -20,7 +20,7 @@ const App = () => {
 	const closeModal = () => setOpen(false);
 
 	if (!data){
-		return (<div>Loading</div>);
+		return (<div id="loading">The night is still young...</div>);
 	}
 
 	return (

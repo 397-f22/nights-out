@@ -26,18 +26,21 @@ function RestCardList({ data }) {
         console.log(sortedData);
         return (
             <div>
-                <button type="button" id="filterButton" className="btn btn-outline-danger" onClick={openModal}>
-                    Filter
-                </button>
+                <div id="filterWrapper">
+                    <button type="button" id="filterButton" className="btn btn-outline-danger" onClick={openModal}>
+                        Filter
+                    </button>
+                </div>
                 <AddPlace open={open} close={closeModal}>
                     <FilterForm updateFilter={updateFilter} />
                 </AddPlace>
+
                 {
-                sortedData.map(([id, data]) => {
-                    //let filteredVisits = getNumInDateRange(data.datesVisited, range);
-                    return <RestCard title={id} filteredData={filteredData} setFilteredData={setFiltered}/>
-                }
-                )}
+                    sortedData.map(([id, data], index) => {
+                        //let filteredVisits = getNumInDateRange(data.datesVisited, range);
+                        return <RestCard title={id} filteredData={filteredData} setFilteredData={setFiltered} first={index == 0} />
+                    }
+                    )}
             </div>
         )
     }

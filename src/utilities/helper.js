@@ -11,6 +11,7 @@ export function filterByDateRange(data, range){
     }
 
     const filteredArr =  Object.entries(data).filter(function ([key, value]) {
+        if (key=='test') { return false;}
         let lastDay = new Date(value.datesVisited[value.datesVisited.length - 1]);
         return lastDay >= beforeDay;                        
     });    

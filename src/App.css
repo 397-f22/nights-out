@@ -1,3 +1,10 @@
+#loading {
+    color: white;
+    margin: auto;
+    text-align: center;
+    margin-top: 50%;
+}
+
 .header {
     text-align: center;
     display: flex;
@@ -46,4 +53,10 @@ p {
     background-color: #c395ee !important;
     color: white !important;
     border: 2px solid #c395ee !important;
+}
+
+#filterWrapper {
+    position: fixed;
+    right: 15px;
+    top: 15px;
 }
