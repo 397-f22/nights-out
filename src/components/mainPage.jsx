@@ -1,12 +1,16 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import RestCardList from "./restCardList";
-import { useDbData } from "../utilities/firebase";
+import { useDbData, useDbUpdate } from "../utilities/firebase";
 import AddPlace from "./addPlace";
 import Header from "./Header";
 import AddPlaceForm from "./addPlaceForm";
 
 function MainPage(){
-    const[data, error] = useDbData('/');
+  const { user } = useParams();
+  const [update, result] = useDbUpdate(`/`);
+  let [data, error] = useDbData("/");
+
 	//console.log(data)  
 	const [open, setOpen] = useState(false);
 	const [message, setMessage] = useState("");
@@ -21,19 +25,27 @@ function MainPage(){
 		return (<div>Loading</div>);
 	}
 
+  let userData = data[user];
+  if(userData == null) {
+    update({[user]: ""});
+    window.location.reload(false);
+  }
+
+  if(userData === "") userData = {};
+
     return(
         <>
             {/* <SidePanel open={openSidePanel} close={closeSideModal} /> */}
-            <RestCardList data={data} />
+            <RestCardList data={userData} />
 
             <button type="button" id="addButton" className="btn" onClick={openModal}>
                 <p>+</p>
             </button>
             <AddPlace open={open} close={closeModal}>
-            <AddPlaceForm data={data} message={message} setMessage={setMessage}/>
+            <AddPlaceForm user={user} data={userData} message={message} setMessage={setMessage}/>
             </AddPlace>
         </>
     )
 }
 
-export default MainPage
+export default MainPage;

@@ -16,7 +16,7 @@ function Login(){
                         <label for="sessionKey">Session Key</label>
                         <input type="text" className="form-control" id="sessionKey" aria-describedby="emailHelp" placeholder="Enter session key" onChange={handleChange} value={session} />                    
                     </div>
-                    <Link to={"/" + session}>
+                    <Link to={"/user/" + session}>
                         <button type="submit" class="btn btn-primary">Join Session</button>
                     </Link>                
                 </form>

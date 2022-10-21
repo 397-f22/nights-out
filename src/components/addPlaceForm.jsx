@@ -12,9 +12,9 @@ import { useState } from "react";
 //   console.log(data);
 // };
 
-const AddPlaceForm = ({data, message, setMessage}) => {
+const AddPlaceForm = ({user, data, message, setMessage}) => {
     
-    const [update, result] = useDbUpdate(`/`);
+    const [update, result] = useDbUpdate(`/${user}`);
 
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
